@@ -2,6 +2,7 @@ import React from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import Profile from './Profile'
+import '../Auth/Logout.css'
 
 export default function Logout() {
     
@@ -14,9 +15,9 @@ export default function Logout() {
     }
 
   return (
-    <div className="logout text-center p-3 bg-dark text-white">
+    <div className="logout text-center bg-dark text-white">
         <Profile />
-        <button className="btn btn-info" onClick={() => handleAuth()}>
+        <button className="btn btn-dark m-0" onClick={() => handleAuth()}>
             Logout
         </button>
     </div>

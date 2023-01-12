@@ -1,9 +1,18 @@
 import React from 'react'
+import '../Auth/Login.css'
 //Below we import useAuth from our AuthContext in order to access the login() function
 //useAuth() is the function we want to import any time we need currentUser, login(), or logout()
 import { useAuth } from '../../contexts/AuthContext'
 import { useNavigate } from 'react-router-dom'
-import { Container, Card } from 'react-bootstrap'
+import { Carousel, Container, Card} from 'react-bootstrap'
+
+
+
+import image from '../../images/carousel1.JPG'
+import image2 from '../../images/carousel2.JPG'
+import image3 from '../../images/carousel3.JPG'
+import image4 from '../../images/carousel4.JPG'
+
 
 
 export default function Login() {
@@ -17,15 +26,72 @@ export default function Login() {
 
         //return the user to a specific location using useNavigate from react-router-dom
         return navigate('/')
+
     }
 
   return (
-    <div className='login'>
-        <article className="bg-info mb-5 p-5 text-dark">
-            <h1 className="text-center">Welcome to The Wedding To Do App!</h1>
-        </article>
+    <div className='login row'>
+        <div className='col-md-8'>
+        <Carousel controls={true} fade>
+                <Carousel.Item>
+                    {/* image and .Caption are placed inside the .Item */}
+                    <img src={image} alt='First Slide' className='carouselImg' />
+                    <Carousel.Caption>
+                    {/* <h1 className="text-center">Natalie and Edward</h1>
+                    <h3 className='text-center'>May 30, 2023</h3>
+                    <h4 className='text-center'>Blue Springs, MO</h4> */}
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    {/* image and .Caption are placed inside the .Item */}
+                    <img src={image2} alt='Second Slide' className='carouselImg' />
+                    <Carousel.Caption>
+                    {/* <h1 className="text-center">Natalie and Edward</h1>
+                    <h3 className='text-center'>May 30, 2023</h3>
+                    <h4 className='text-center'>Blue Springs, MO</h4> */}
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    {/* image and .Caption are placed inside the .Item */}
+                    <img src={image3} alt='Third Slide' className='carouselImg' />
+                    <Carousel.Caption>
+                    {/* <h1 className="text-center">Natalie and Edward</h1>
+                    <h3 className='text-center'>May 30, 2023</h3>
+                    <h4 className='text-center'>Blue Springs, MO</h4> */}
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    {/* image and .Caption are placed inside the .Item */}
+                    <img src={image4} alt='Fourth Slide' className='carouselImg' />
+                    <Carousel.Caption>
+                    {/* <h1 className="text-center">Natalie and Edward</h1>
+                    <h3 className='text-center'>May 30, 2023</h3>
+                    <h4 className='text-center'>Blue Springs, MO</h4> */}
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
+            </div>
+        <div className='col-md-4'>
         <Container>
-            <Card className='m-2 border-dark text-center'>
+            <Card className='counter mt-3 border-dark text-center'>
+                <Card.Header className='bg-dark text-white'>
+                    <h1>Counter</h1>
+                </Card.Header>
+                <Card.Body>
+                <div>
+                    Insert Countdown to Wedding HERE!!
+                    Here's some text to fill the space for now
+                    Here's some text to fill the space for now
+                    Here's some text to fill the space for now
+                    Here's some text to fill the space for now
+                    Here's some text to fill the space for now
+                    Here's some text to fill the space for now
+                    Here's some text to fill the space for now
+                </div>
+
+                </Card.Body>
+            </Card>
+            <Card className='login mt-3 border-dark text-center'>
                 <Card.Header className='bg-dark text-white'>
                     <h2>Login for Full Functionality</h2>
                 </Card.Header>
@@ -36,6 +102,7 @@ export default function Login() {
                 </Card.Body>
             </Card>
         </Container>
+        </div>
     </div>
   )
 }

@@ -1,0 +1,35 @@
+.carousel {
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+/* .carousel-caption {
+    background-image: radial-gradient(circle at 50% 50%, rgba(200, 200, 200, .75), transparent);
+    color: #000 !important;
+    position: relative;
+} */
+
+.carouselImg {
+    border-radius: 15px;
+    width: 60%;
+    max-height: 100%;
+    position: center;
+    
+}
+
+@media only screen and (max-width: 1023px) {
+    .carousel-item {
+        height: unset;
+    }
+}
+
+.login {
+    min-height: 35vh;
+}
