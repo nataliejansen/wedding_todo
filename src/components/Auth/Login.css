@@ -1,13 +1,15 @@
 .carousel {
-    display: flex;
-    justify-content: center;
-    height: 70vh;
-    width: 100%;
-    margin-top: 1.5rem;
+    max-height: 70vh;
+    width: fit-content;
+    margin: auto;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0;
 }
 
 .carousel-item {
     position: relative;
+    height: 75vh !important;
 }
 
 /* .carousel-caption {
@@ -18,11 +20,11 @@
 
 .carouselImg {
     border-radius: 15px;
-    width: 60%;
-    max-height: 100%;
-    position: center;
+    max-width: 100%;
+    max-height: 70vh;
     
 }
+
 
 @media only screen and (max-width: 1023px) {
     .carousel-item {
@@ -30,6 +32,33 @@
     }
 }
 
-.login {
-    min-height: 35vh;
+div.container {
+    padding: 0;
+    margin: auto;
+    max-width: 100%;
+    position: relative;
+    justify-content: center;
+    box-sizing: border-box;
 }
+
+.counter {
+    max-width: 55%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.loginCard {
+    max-width: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.login {
+    background-image: url(../../images/background.jpg);
+    background-position: 50% 80%;
+    background-size: cover;
+}
+
