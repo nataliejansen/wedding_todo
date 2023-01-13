@@ -31,7 +31,7 @@ export default function Login() {
 
   return (
     <div className='login row'>
-        <div className='col-md-8'>
+        <div className='col m-3'>
         <Carousel controls={true} fade>
                 <Carousel.Item>
                     {/* image and .Caption are placed inside the .Item */}
@@ -71,11 +71,26 @@ export default function Login() {
                 </Carousel.Item>
             </Carousel>
             </div>
-        <div className='col-md-4'>
+        <div className='col'>
         <Container>
-            <Card className='counter mt-3 border-dark text-center'>
+            <Card className='loginCard mx-auto mt-2 border-dark text-center'>
                 <Card.Header className='bg-dark text-white'>
-                    <h1>Counter</h1>
+                    <h3>Login</h3>
+                </Card.Header>
+                <Card.Body>
+                    <p>To gain access to our wedding planner app, please login below.</p>
+                    <button className="btn btn-success m-1" onClick={() => handleAuth() }>
+                        Login with Github
+                    </button>
+                    <br />
+                    <button className="btn btn-success m-1" onClick={() => handleAuth() }>
+                        Login with Email
+                    </button>
+                </Card.Body>
+            </Card>
+            <Card className='counter mx-auto mt-2 border-dark text-center'>
+                <Card.Header className='bg-dark text-white'>
+                    <h3>Counter</h3>
                 </Card.Header>
                 <Card.Body>
                 <div>
@@ -89,16 +104,6 @@ export default function Login() {
                     Here's some text to fill the space for now
                 </div>
 
-                </Card.Body>
-            </Card>
-            <Card className='login mt-3 border-dark text-center'>
-                <Card.Header className='bg-dark text-white'>
-                    <h2>Login for Full Functionality</h2>
-                </Card.Header>
-                <Card.Body>
-                    <button className="btn btn-success" onClick={() => handleAuth() }>
-                        Login with Github
-                    </button>
                 </Card.Body>
             </Card>
         </Container>
