@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import axios from 'axios'
 import SingleCategory from './SingleCategory'
+import './Categories.css'
 
 export default function Categories() {
   const [categories, setCategories] = useState([]);
