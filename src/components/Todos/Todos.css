@@ -1,8 +1,7 @@
 section.todos {
-    background-image: url('../../images/background.jpg');
     background-size: 100%;
     min-height: 78vh;
-    background-color: black;
+    color:#212529;
 }
 
 section.todos article.todosGallery {
@@ -21,7 +20,7 @@ article.todosGallery div.singleTodos {
     position: relative;
 }
 
-div.singleTodos h3 {
+div.singleTodo h3 {
     background-color: rgb(23, 162, 184);
     padding: .5em 0;
     border-bottom: 4px solid #212529;
