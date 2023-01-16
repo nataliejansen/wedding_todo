@@ -72,7 +72,7 @@ export default function TodoForm(props) {
                     </Field>
                 </div> 
                 <div className="form-group m-3">
-                    <button type='submit' className='btn btn-info m-3'>Add To Do</button>
+                    <button type='submit' className='btn m-3'>Add To Do</button>
                 </div>
 
             </Form>

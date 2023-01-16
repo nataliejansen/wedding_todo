@@ -15,9 +15,9 @@ export default function Logout() {
     }
 
   return (
-    <div className="logout text-center bg-dark text-white">
+    <div className="logout text-center text-white">
         <Profile />
-        <button className="btn btn-dark m-0" onClick={() => handleAuth()}>
+        <button className="btn btn-dark m-0 border-white" onClick={() => handleAuth()}>
             Logout
         </button>
     </div>

@@ -29,12 +29,12 @@ export default function Todos() {
 
   return (
     <section className="todos">
-      <article className="bg-light p-5">
-        <h1 className="text-center">Wedding Todo Dashboard</h1>
+      <article className="bg-light p-5 todo">
+        <h1 className="text-center bg-white dashboard">Wedding Todo Dashboard</h1>
       </article>
       {currentUser.email === process.env.REACT_APP_ADMIN_EMAIL &&
         <div className="bg-dark p-2 mb-3 text-center">
-          <button className='btn btn-info' onClick={() => setShowCreate(!showCreate)}>
+          <button className='btn' onClick={() => setShowCreate(!showCreate)}>
             {!showCreate ? 'Add a To Do' : 'Close Form'}
           </button>
           <div className="createContainer">

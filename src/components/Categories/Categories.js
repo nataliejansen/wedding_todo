@@ -6,6 +6,8 @@ import SingleCategory from './SingleCategory'
 import { useAuth } from '../../contexts/AuthContext'
 import CatCreate from './CatCreate';
 
+import './Categories.css'
+
 export default function Categories() {
   const [categories, setCategories] = useState([]);
   
@@ -25,8 +27,8 @@ export default function Categories() {
   
   return (
     <section className="categories">
-      <article className="bg-info p-5">
-        <h1 className="text-center">Categories Dashboard</h1>
+      <article className="cat p-5">
+        <h1 className="text-center dashboard bg-white">Categories Dashboard</h1>
       </article>
 
       {currentUser.email === process.env.REACT_APP_ADMIN_EMAIL &&
@@ -42,7 +44,7 @@ export default function Categories() {
       }
 
 <Container className='p-2'>
-        <table className="table bg-info table-dark my-3">
+        <table className="table table-dark my-3">
           <thead className="table-secondary text-uppercase">
             <tr>
               <th>Name</th>
