@@ -1,0 +1,9 @@
+footer {
+    background-image: url(./images/greenery.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+    opacity: .85;
+    font-family: cursive;
+}
