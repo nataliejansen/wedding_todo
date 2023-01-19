@@ -48,12 +48,12 @@ export default function Todos() {
       <Container>
         <article className="todoGallery row justify-content-center">
           {filter === 0 ? todos.map(x =>
-            <SingleTodo key={x.todoId} todo={x} getTodos={getTodos}/>
+            <SingleTodo key={x.toDoId} todo={x} getTodos={getTodos}/>
           ) :
           todos.filter(x => x.categoryId === filter).map(x =>
-            <SingleTodo key={x.todoId} todo={x} getTodos={getTodos}/>
+            <SingleTodo key={x.toDoId} todo={x} getTodos={getTodos}/>
           )}
-          {filter !== 0 && todos.filter(x => x.todoId === filter).length === 0 &&
+          {filter !== 0 && todos.filter(x => x.categoryId === filter).length === 0 &&
             <h2 className="alert alert-warning text-dark">
               There are no results for this category!
             </h2>
