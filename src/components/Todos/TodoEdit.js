@@ -14,7 +14,7 @@ export default function TodoEdit(props) {
                 <TodoForm
                     getTodos={props.getTodos}
                     setShowEdit={props.setShowEdit}
-                    resource={props.todo} />
+                    todo={props.todo} />
 
             </Modal.Body>
         </Modal>

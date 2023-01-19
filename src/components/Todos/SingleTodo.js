@@ -16,6 +16,18 @@ export default function SingleTodo(props) {
     }
   }
 
+
+  const handleDone = (id) => {
+    const todoToEdit = {
+      toDoId: props.todo.toDoId,
+      name: props.todo.name,
+      done: !props.todo.done,
+      categoryId: props.todo.categoryId
+    }
+
+    axios.put(`https://localhost:7228/api/Todos/${id}`, todoToEdit).then(() => {props.getTodos()})
+  }
+
   return (
     <div className='singleTodo col-md-5 m-4 text-white'>
       {currentUser.email === process.env.REACT_APP_ADMIN_EMAIL &&
@@ -23,7 +35,7 @@ export default function SingleTodo(props) {
           <button id='editLink' onClick={() => setShowEdit(true)}>
             <FaEdit />
           </button>
-          <button id='deleteLink' onClick={() => deleteTodo(props.todo.todoId)}>
+          <button id='deleteLink' onClick={() => deleteTodo(props.todo.toDoId)}>
             <FaTrashAlt />
           </button>
           {showEdit &&
@@ -42,9 +54,12 @@ export default function SingleTodo(props) {
               <p>No Tasks to complete for this category!</p>
           }
 
-          <a href={props.todo.done} target='_blank' rel='noreferrer' className='btn'>
-              Mark as Done {props.todo.linkText}
-        </a> 
+          <input type='checkbox' name='done' checked={props.todo.done} onChange={() => handleDone(props.todo.toDoId)}/>
+          <label htmlFor='done'>
+            Mark as Done
+          </label>
+
+          
 
       </div>
 

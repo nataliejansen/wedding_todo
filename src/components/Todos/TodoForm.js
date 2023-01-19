@@ -6,28 +6,33 @@ import axios from 'axios'
 export default function TodoForm(props) {
     const [categories, setCategories] = useState([])
 
+
     const getCategories = () => {
         axios.get(`https://localhost:7228/api/Categories`).then(response => setCategories(response.data))
     }
 
     const handleSubmit = (values) => {
         if(!props.todo){
-            const todoToCreate = values
+            const todoToCreate = {
+                name: values.name,
+                done: false,
+                categoryId: values.categoryId
+            }
 
             axios.post(`https://localhost:7228/api/ToDos`, todoToCreate).then(() => {
-                props.getToDos()
+                props.getTodos()
                 props.setShowCreate(false)
             })
         }
         else{
             const todoToEdit ={
-                todoId: props.todo.todoId,
+                todoId: props.todo.toDoId,
                 name: values.name,
-                done: values.done,
+                done: props.todo.done,
                 categoryId: values.categoryId
             }
 
-            axios.put(`https://localhost:7228/api/ToDos/${props.todo.todoId}`, todoToEdit).then(() => {
+            axios.put(`https://localhost:7228/api/ToDos/${props.todo.toDoId}`, todoToEdit).then(() => {
                 props.getTodos()
                 props.setShowEdit(false)
             })
@@ -55,10 +60,7 @@ export default function TodoForm(props) {
                         <div className="text-danger">{errors.name}</div>
                     ) : null}
                 </div>
-                <div className="form-group m-3">
-                <Field name='done'>
-                <input type='checkbox' checked={props.todo.done}>Mark as Done</input></Field>
-                </div>
+
                 <div className='form-group m-3'>
                     <Field name='categoryId' as='select' className='form-control'>
                         {/* Below we will map an option tag for every category in the API
